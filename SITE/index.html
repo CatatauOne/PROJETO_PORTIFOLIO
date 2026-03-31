@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJETOSCATATECH | Portfólio</title>
+    <style>
+        /* Importando a fonte Outfit que é idêntica à do vídeo */
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;900&display=swap');
+
+        :root {
+            --bg-dark: #0f172a;
+            --primary-gradient: linear-gradient(135deg, #a78bfa 0%, #6d28d9 100%);
+            --accent: #7c3aed;
+            --off-white: #f1f5f9;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Outfit', sans-serif; }
+
+        body { overflow-x: hidden; scroll-behavior: smooth; }
+
+        /* --- HEADER --- */
+        .hero {
+            height: 100vh;
+            background-color: var(--bg-dark);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 5%;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 12vw, 7rem);
+            font-weight: 900;
+            line-height: 0.9;
+            text-transform: uppercase;
+            letter-spacing: -3px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .cta-btn {
+            padding: 20px 50px;
+            background: white;
+            color: black;
+            text-decoration: none;
+            border-radius: 100px;
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 1rem;
+            transition: 0.3s;
+            margin-top: 30px;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-btn:hover {
+            transform: scale(1.1);
+            background: #a78bfa;
+            color: white;
+        }
+
+        /* --- SEÇÃO DE PROJETOS --- */
+        .projects-section {
+            background-color: #c6aedd;
+            padding: 100px 5%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 8vw, 5rem);
+            color: #222121;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .project-display {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        .project-card {
+            width: 300px;
+            height: 400px;
+            background: var(--primary-gradient);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            transition: 0.5s;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 900;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card-left { transform: rotate(-8deg); margin-top: 40px; }
+        .card-right { transform: rotate(8deg); }
+
+        .project-card:hover { transform: rotate(0deg) scale(1.1); z-index: 10; }
+
+        .wave { width: 100%; line-height: 0; fill: #af80db; }
+
+        /* --- NOVA SEÇÃO: IMPACTO DA AUTOMAÇÃO --- */
+        .impact-section {
+            background-color: #f1f5f9;
+            color: #0f172a;
+            padding: 100px 5%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .sim-container {
+            background: white;
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+            max-width: 800px;
+            width: 100%;
+            margin-top: 40px;
+        }
+
+        #log-screen {
+            background: #1e293b;
+            color: #38bdf8;
+            height: 200px;
+            border-radius: 15px;
+            margin-top: 20px;
+            padding: 20px;
+            font-family: monospace;
+            text-align: left;
+            overflow-y: auto;
+            display: none;
+            font-size: 0.85rem;
+        }
+
+        .progress-bar-bg {
+            width: 100%;
+            height: 20px;
+            background: #e2e8f0;
+            border-radius: 10px;
+            margin-top: 20px;
+            display: none;
+            overflow: hidden;
+        }
+
+        #progress-fill {
+            width: 0%;
+            height: 100%;
+            background: var(--primary-gradient);
+            transition: 0.1s linear;
+        }
+
+        .stats-grid {
+            display: flex;
+            gap: 60px;
+            margin-top: 50px;
+            justify-content: center;
+        }
+
+        .stat-item h3 { font-size: 4rem; font-weight: 900; line-height: 1; }
+        .red { color: #ef4444; }
+        .purple { color: var(--accent); }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <h1>VOCÊ NUNCA <br> ESTEVE TÃO <span>PERTO</span></h1>
+        <p style="font-size: 1.5rem; opacity: 0.8;">DE AUTOMATIZAR TUDO!</p>
+        <a href="#projects" class="cta-btn">Explorar Projetos</a>
+    </header>
+
+    
+    <section id="projects" class="projects-section">
+        <h2 class="section-title">PROJETOS QUE <br>GERAM TEMPO.</h2>
+        
+        <div class="project-display">
+    <div class="project-card card-left">
+        SISTEMA DE ESTOQUE 
+        <span style="font-size: 0.8rem; margin-top:10px; font-weight: 400;">Python + SQL</span>
+    </div>
+
+    <div class="project-card card-right" style="background: #000;">
+        DASHBOARD DE VENDAS 
+        <span style="font-size: 0.8rem; margin-top:10px; font-weight: 400;">PowerBI / Data</span>
+    </div>
+
+    <div class="project-card card-left">
+        AUTOMAÇÃO WEB 
+        <span style="font-size: 0.8rem; margin-top:10px; font-weight: 400;">Selenium / RPA</span>
+    </div>
+
+    <div class="project-card card-right" style="background: var(--bg-dark);">
+        VALIDADOR DE CPF 
+        <span style="font-size: 0.8rem; margin-top:10px; font-weight: 400;">Algoritmo RegEx / JS</span>
+    </div>
+</div>
+
+    </section>
+
+    <section class="impact-section">
+        <h2 class="section-title" style="color: #0f172a;">DE HORAS PARA SEGUNDOS</h2>
+        <p style="max-width: 600px; font-size: 1.1rem; color: #475569;">O processo manual de conferência de notas levava uma tarde inteira. Com esta automação, ele leva 3.2 segundos.</p>
+        
+        <div class="sim-container">
+            <button id="run-btn" class="cta-btn" onclick="rodarSimulacao()" style="background: var(--bg-dark); color: white;">🚀 SIMULAR AUTOMAÇÃO REAL</button>
+            
+            <div class="progress-bar-bg" id="pb-bg">
+                <div id="progress-fill"></div>
+            </div>
+
+            <div id="log-screen"></div>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-item"><h3 class="red">4h</h3><p>Manual</p></div>
+            <div style="font-size: 3rem; align-self: center;">➔</div>
+            <div class="stat-item"><h3 class="purple">3.2s</h3><p>Catatech</p></div>
+        </div>
+    </section>
+
+    <script>
+        function rodarSimulacao() {
+            const btn = document.getElementById('run-btn');
+            const bg = document.getElementById('pb-bg');
+            const fill = document.getElementById('progress-fill');
+            const log = document.getElementById('log-screen');
+            
+            btn.style.display = 'none';
+            bg.style.display = 'block';
+            log.style.display = 'block';
+            log.innerHTML = '';
+
+            let progress = 0;
+            const items = ["Tela iPhone", "Bateria S22", "Cabo USB-C", "Sensor Prox.", "Placa de Carga"];
+
+            const interval = setInterval(() => {
+                progress += 2;
+                fill.style.width = progress + '%';
+                
+                if (progress % 10 === 0) {
+                    const item = items[Math.floor(Math.random() * items.length)];
+                    log.innerHTML += `> Lendo Nota Fiscal #00${progress/2}... OK!<br>`;
+                    log.innerHTML += `> Atualizando estoque: ${item} (+${Math.floor(Math.random()*100)})<br>`;
+                    log.scrollTop = log.scrollHeight;
+                }
+
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    log.innerHTML += `<br><span style="color: #22c55e; font-weight: 900;">✅ PROCESSAMENTO CONCLUÍDO COM SUCESSO!</span>`;
+                    setTimeout(() => alert("Trabalho de 4 horas reduzido para 3.2 segundos."), 300);
+                }
+            }, 60);
+        }
+    </script>
+
+    <style>
+    /* Estilos Adicionais para o Dashboard */
+    .dashboard-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        width: 100%;
+        max-width: 1100px;
+        margin-top: 50px;
+    }
+
+    .dash-card {
+        background: white;
+        padding: 30px;
+        border-radius: 25px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+        text-align: left;
+        position: relative;
+        overflow: hidden;
+        transition: 0.3s;
+    }
+
+    .dash-card:hover { transform: translateY(-10px); }
+
+    .dash-card h5 { color: #af80db; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
+    .dash-card .value { font-size: 2.5rem; font-weight: 900; margin: 10px 0; color: #0f172a; }
+    
+    /* Gráfico simples em CSS */
+    .chart-bar {
+        height: 8px;
+        background: #1b59aa;
+        border-radius: 10px;
+        margin-top: 15px;
+        position: relative;
+    }
+    .chart-fill {
+        height: 100%;
+        background: var(--primary-gradient);
+        border-radius: 10px;
+        width: 0%; /* Animado via JS */
+        transition: 1.5s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+    }
+
+    .floating-icon {
+        position: absolute;
+        right: -10px;
+        top: -10px;
+        font-size: 5rem;
+        opacity: 0.05;
+        transform: rotate(15deg);
+    }
+</style>
+
+<section class="impact-section" style="background-color: #af80db;">
+    <h2 class="section-title" style="color: #0f172a;">Dashboard de Automação</h2>
+    <p>Visualize os dados processados em tempo real pela inteligência Catatech.</p>
+
+    <div class="dashboard-container">
+        <div class="dash-card">
+            <div class="floating-icon">📦</div>
+            <h5>Itens Processados</h5>
+            <div class="value" id="count-items">0</div>
+            <p style="color: #22c55e; font-weight: 700;">↑ 100% Automático</p>
+            <div class="chart-bar"><div class="chart-fill" id="fill-1"></div></div>
+        </div>
+
+        <div class="dash-card">
+            <div class="floating-icon">⚡</div>
+            <h5>Tempo Economizado</h5>
+            <div class="value" id="count-time">0h</div>
+            <p style="color: var(--accent); font-weight: 700;">Eficiência Máxima</p>
+            <div class="chart-bar"><div class="chart-fill" id="fill-2"></div></div>
+        </div>
+
+        <div class="dash-card">
+            <div class="floating-icon">🛡️</div>
+            <h5>Integridade (SQL)</h5>
+            <div class="value">99.9%</div>
+            <p style="color: #64748b;">Zero Erro Humano</p>
+            <div class="chart-bar"><div class="chart-fill" id="fill-3"></div></div>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Função para animar os números e barras do Dashboard
+    function atualizarDashboard() {
+        // Animação dos Números
+        let items = 0;
+        let time = 0;
+        
+        const interval = setInterval(() => {
+            if(items < 1250) items += 25;
+            if(time < 4) time += 0.1;
+
+            document.getElementById('count-items').innerText = items + "+";
+            document.getElementById('count-time').innerText = time.toFixed(1) + "h";
+
+            if(items >= 1250) clearInterval(interval);
+        }, 30);
+
+        // Animação das Barras
+        setTimeout(() => {
+            document.getElementById('fill-1').style.width = "85%";
+            document.getElementById('fill-2').style.width = "98%";
+            document.getElementById('fill-3').style.width = "100%";
+        }, 500);
+    }
+
+    // Chama a função ao carregar ou quando o usuário scrolar até aqui
+    window.onload = atualizarDashboard;
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+    .dashboard-wrapper {
+        background: #f8fafc;
+        padding: 80px 5%;
+        color: #0f172a;
+    }
+
+    .grid-layout {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr; /* Gráfico maior que a tabela */
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .data-card {
+        background: white;
+        padding: 30px;
+        border-radius: 30px;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+    }
+
+    .data-card h3 {
+        font-weight: 900;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        font-size: 1.2rem;
+    }
+
+    /* Estilização da Tabela */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.9rem;
+    }
+
+    th {
+        text-align: left;
+        padding: 12px;
+        background: #f1f5f9;
+        border-radius: 10px 0 0 10px;
+    }
+
+    td {
+        padding: 12px;
+        border-bottom: 1px solid #f1f5f9;
+    }
+
+    .status-up { color: #22c55e; font-weight: 700; }
+    .status-pending { color: #ef4444; font-weight: 700; }
+
+    
+
+    @media (max-width: 900px) {
+        .grid-layout { grid-template-columns: 1fr; }
+    }
+</style>
+
+<section class="dashboard-wrapper">
+    <div class="grid-layout">
+        
+        <div class="data-card">
+            <h3>Produtividade: Humano vs Automação</h3>
+            <canvas id="efficiencyChart"></canvas>
+        </div>
+
+        <div class="data-card">
+            <h3>Últimas Entradas (SQL)</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Qtd</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                    </tbody>
+            </table>
+        </div>
+
+    </div>
+</section>
+
+<script>
+    // 1. CONFIGURAÇÃO DO GRÁFICO
+    const ctx = document.getElementById('efficiencyChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['0s', '1s', '2s', '3s', '4s', '5s'],
+            datasets: [{
+                label: 'Itens Processados (Automação)',
+                data: [0, 150, 400, 850, 1200, 1500],
+                borderColor: '#6d28d9',
+                backgroundColor: 'rgba(109, 40, 217, 0.1)',
+                fill: true,
+                tension: 0.4,
+                borderWidth: 4
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: { legend: { display: false } },
+            scales: { y: { beginAtZero: true } }
+        }
+    });
+
+    // 2. POPULAR TABELA SIMULADA
+    const dadosEstoque = [
+        { item: "Tela iPhone 13", qtd: "+45", status: "Processado" },
+        { item: "Bateria S22", qtd: "+30", status: "Processado" },
+        { item: "Cabo USB-C", qtd: "+100", status: "Não processado" },
+        { item: "Carregador 20W", qtd: "+50", status: "Processado" }
+    ];
+
+    const tbody = document.getElementById('table-body');
+    dadosEstoque.forEach(d => {
+        const statusClass = d.status === "Processado" ? "status-up" : "status-pending";
+        tbody.innerHTML += `
+            <tr>
+                <td><strong>${d.item}</strong></td>
+                <td>${d.qtd}</td>
+                <td class="${statusClass}">${d.status}</td>
+            </tr>
+        `;
+    });
+</script>
+
+<style>
+    /* Estilos Exclusivos para a Seção de Automação Web */
+    #automacao-web {
+        background-color: var(--bg-dark); /* Fundo escuro para contrastar */
+        color: white;
+        padding: 100px 10%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .card-rpa {
+        background: rgba(255, 255, 255, 0.03); /* Fundo sutil com vidro fosco */
+        backdrop-filter: blur(10px);
+        padding: 40px;
+        border-radius: 30px;
+        box-shadow: 0 30px 60px rgba(109, 40, 217, 0.2); /* Sombra roxa sutil */
+        width: 100%;
+        max-width: 800px;
+        text-align: center;
+    }
+
+    .form-rpa {
+        display: flex;
+        gap: 15px;
+        margin-top: 30px;
+        justify-content: center;
+    }
+
+    .input-cep {
+        padding: 15px 20px;
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        border-radius: 50px;
+        background: transparent;
+        color: white;
+        font-size: 1rem;
+    }
+
+    /* Barra de Progresso Estilo Tech */
+    .progress-container {
+        width: 100%;
+        background: rgba(255, 255, 255, 0.05);
+        height: 20px;
+        border-radius: 50px;
+        margin-top: 30px;
+        display: none;
+        overflow: hidden;
+    }
+
+    .progress-bar-fill {
+        height: 100%;
+        background: var(--primary-gradient);
+        width: 0%;
+        transition: 0.1s;
+    }
+
+    #log-screen {
+        margin-top: 20px;
+        background: black;
+        color: #a78bfa;
+        font-family: monospace;
+        padding: 20px;
+        border-radius: 15px;
+        text-align: left;
+        max-height: 150px;
+        overflow-y: auto;
+        display: none;
+    }
+</style>
+
+<section id="automacao-web">
+    <div class="hero-content">
+        <h1>AUTOMAÇÃO <span>WEB</span></h1>
+        <p style="font-size: 1.2rem; margin-top: 20px;">Estudo de Caso: 4h de Digitação em 30s de Robô (Selenium/RPA).</p>
+    </div>
+
+    <div class="card-rpa">
+        <h2>Busca de CEP Automatizada</h2>
+        <p>Imagine que você tem 50 CEPs para validar. O robô faz isso instantaneamente.</p>
+        
+        <div class="form-rpa">
+            <input type="text" id="inputCEP" class="input-cep" placeholder="Digite um CEP">
+            <button class="cta-btn" onclick="iniciarAutomacaoWeb()" id="btnWeb">🚀 Rodar Robô</button>
+        </div>
+
+        <div class="progress-container" id="progWeb">
+            <div class="progress-bar-fill" id="fillWeb"></div>
+        </div>
+
+        <div id="log-screen"></div>
+    </div>
+</section>
+
+<script>
+function iniciarAutomacaoWeb() {
+    const btn = document.getElementById('btnWeb');
+    const fill = document.getElementById('fillWeb');
+    const prog = document.getElementById('progWeb');
+    const log = document.getElementById('log-screen');
+    
+    btn.disabled = true;
+    btn.innerText = "EXECUTANDO ROBÔ...";
+    prog.style.display = "block";
+    log.style.display = "block";
+    log.innerHTML = "";
+
+    let progress = 0;
+    const ceps = ["01001-000", "20010-000", "40010-000", "30110-000", "50010-000"];
+
+    const interval = setInterval(() => {
+        progress += 4;
+        fill.style.width = progress + "%";
+        
+        if (progress % 12 === 0) {
+            const cepAleatorio = ceps[Math.floor(Math.random() * ceps.length)];
+            log.innerHTML += `> Abrindo Navegador (Chrome)... OK!<br>`;
+            log.innerHTML += `> Acessando Site Correios... OK!<br>`;
+            log.innerHTML += `> Consultando CEP: ${cepAleatorio}...<br>`;
+            log.scrollTop = log.scrollHeight;
+        }
+
+        if (progress >= 100) {
+            clearInterval(interval);
+            btn.innerText = "CONCLUÍDO! ✅";
+            btn.style.background = "#22c55e";
+            log.innerHTML += "<br><strong>[SUCCESS] Endereços validados e Excel gerado.</strong>";
+        }
+    }, 150);
+}
+</script>
+
+
+<style>
+    .validator-section {
+        background-color: #ffffff;
+        padding: 100px 10%;
+        text-align: center;
+        color: var(--bg-dark);
+    }
+
+    .validator-card {
+        background: #f8fafc;
+        border: 2px solid #e2e8f0;
+        padding: 40px;
+        border-radius: 30px;
+        max-width: 600px;
+        margin: 40px auto;
+        transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .validator-card.valid { border-color: #22c55e; box-shadow: 0 20px 40px rgba(34, 197, 94, 0.2); }
+    .validator-card.invalid { border-color: #ef4444; box-shadow: 0 20px 40px rgba(239, 68, 68, 0.2); }
+
+    .input-field {
+        width: 100%;
+        padding: 20px;
+        font-size: 1.5rem;
+        border-radius: 15px;
+        border: 2px solid #cbd5e1;
+        text-align: center;
+        font-weight: 900;
+        outline: none;
+        margin-bottom: 20px;
+    }
+
+    #validator-msg {
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 1.2rem;
+    }
+</style>
+
+<section class="validator-section">
+    <h2 class="section-title" style="color: var(--bg-dark);">Validador de Identidade</h2>
+    <p>Garanta a integridade dos seus dados com algoritmos de verificação em tempo real.</p>
+
+    <div class="validator-card" id="v-card">
+        <input type="text" 
+               id="cpfInput" 
+               class="input-field" 
+               placeholder="000.000.000-00" 
+               maxlength="14" 
+               oninput="mascaraCPF(this); validarCPF()">
+        
+        <div id="validator-msg">Aguardando digitação...</div>
+    </div>
+    
+    <p style="margin-top: 20px; color: #64748b; font-size: 0.9rem;">
+        *Este validador usa a mesma lógica de verificação de dígitos do sistema da Receita Federal.
+    </p>
+</section>
+
+<style>
+    /* NAVBAR MODERNA */
+    .navbar {
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        max-width: 1200px;
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(15px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+        border-radius: 100px;
+        z-index: 1000;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .nav-links { display: flex; gap: 30px; list-style: none; }
+    .nav-links a { text-decoration: none; color: #0f172a; font-weight: 700; font-size: 0.9rem; }
+
+    .logo-tech { font-weight: 900; color: #0f172a; letter-spacing: -1px; }
+
+    /* SEÇÃO DE TECNOLOGIAS */
+    .tech-bar {
+        padding: 50px 0;
+        background: white;
+        display: flex;
+        justify-content: center;
+        gap: 60px;
+        opacity: 0.5;
+        filter: grayscale(1);
+    }
+</style>
+
+<nav class="navbar">
+    <div class="logo-tech">PROJETOSCATATECH</div>
+    <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#projects">Projetos</a></li>
+        <li><a href="#">Sobre</a></li>
+    </ul>
+    <a href="https://wa.me/SEUNUMERO" class="cta-btn" style="margin: 0; padding: 10px 25px; font-size: 0.8rem; background: #0f172a; color: white;">Fale Comigo</a>
+</nav>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+<style>
+    .tech-bar {
+        padding: 60px 5%;
+        background: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        flex-wrap: wrap;
+    }
+
+    .tech-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        filter: grayscale(1); /* Começa cinza estilo Squadeasy */
+        opacity: 0.6;
+        transition: 0.4s;
+        cursor: default;
+    }
+
+    .tech-item:hover {
+        filter: grayscale(0); /* Ganha cor no hover */
+        opacity: 1;
+        transform: translateY(-5px);
+    }
+
+    .tech-item i {
+        font-size: 2.5rem; /* Tamanho do logo */
+        color: #0f172a;
+    }
+
+    .tech-item span {
+        font-size: 1.2rem;
+        font-weight: 900;
+        color: #0f172a;
+        text-transform: uppercase;
+        letter-spacing: -0.5px;
+    }
+
+    /* Cores específicas no Hover para dar vida */
+    .tech-item:hover .devicon-python-plain { color: #3776ab; }
+    .tech-item:hover .devicon-sqlite-plain { color: #003b57; }
+    .tech-item:hover .devicon-selenium-original { color: #43b02a; }
+    .tech-item:hover .devicon-javascript-plain { color: #f7df1e; }
+</style>
+
+<style>
+    .pdf-section {
+        background-color: #f1f5f9;
+        padding: 100px 10%;
+        text-align: center;
+    }
+
+    .dropzone-card {
+        background: white;
+        border: 3px dashed #cbd5e1;
+        padding: 60px;
+        border-radius: 40px;
+        max-width: 800px;
+        margin: 40px auto;
+        transition: 0.3s;
+        cursor: pointer;
+        position: relative;
+    }
+
+    .dropzone-card:hover {
+        border-color: var(--accent);
+        background: #fdfcff;
+    }
+
+    .icon-box {
+        font-size: 4rem;
+        margin-bottom: 20px;
+        display: block;
+    }
+
+    .file-sim {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 20px;
+        font-weight: 700;
+    }
+
+    .badge-pdf { background: #ef4444; color: white; padding: 5px 15px; border-radius: 5px; }
+    .badge-excel { background: #22c55e; color: white; padding: 5px 15px; border-radius: 5px; }
+
+    /* Animação de Conversão */
+    @keyframes convert {
+        0% { transform: translateX(-20px); opacity: 0; }
+        50% { transform: translateX(0); opacity: 1; }
+        100% { transform: translateX(20px); opacity: 0; }
+    }
+    .arrow-anim { display: inline-block; animation: convert 1.5s infinite; }
+</style>
+
+<section class="pdf-section">
+    <h2 class="section-title" style="color: var(--bg-dark);">AUTOMAÇÃO <span>PDF PARA EXCEL</span></h2>
+    <p>Extraia tabelas complexas de PDFs e transforme em dados manipuláveis instantaneamente.</p>
+
+    <div class="dropzone-card" onclick="simularConversao()">
+        <span class="icon-box">📄</span>
+        <h3 id="pdf-status">Arraste seu PDF aqui ou clique para simular</h3>
+        
+        <div class="file-sim" id="animacao-file" style="display: none;">
+            <span class="badge-pdf">RELATORIO.PDF</span>
+            <span class="arrow-anim">➔</span>
+            <span class="badge-excel">DADOS_ESTOQUE.XLSX</span>
+        </div>
+
+        <div id="progresso-pdf" style="width: 100%; height: 10px; background: #e2e8f0; border-radius: 10px; margin-top: 30px; display: none; overflow: hidden;">
+            <div id="bar-pdf" style="width: 0%; height: 100%; background: var(--primary-gradient); transition: 0.3s;"></div>
+        </div>
+    </div>
+</section>
+
+<script>
+function simularConversao() {
+    const status = document.getElementById('pdf-status');
+    const anim = document.getElementById('animacao-file');
+    const prog = document.getElementById('progresso-pdf');
+    const bar = document.getElementById('bar-pdf');
+
+    status.innerText = "Lendo tabelas do PDF...";
+    prog.style.display = "block";
+    anim.style.display = "flex";
+
+    let p = 0;
+    const t = setInterval(() => {
+        p += 5;
+        bar.style.width = p + "%";
+        if(p >= 100) {
+            clearInterval(t);
+            status.innerHTML = "✅ CONVERSÃO CONCLUÍDA!";
+            setTimeout(() => {
+                alert("O script Python processou 50 páginas e gerou o Excel com sucesso.");
+            }, 500);
+        }
+    }, 100);
+}
+</script>
+
+<script>
+function reveal() {
+    var reveals = document.querySelectorAll(".reveal");
+
+    for (var i = 0; i < reveals.length; i++) {
+        var windowHeight = window.innerHeight;
+        var elementTop = reveals[i].getBoundingClientRect().top;
+        var elementVisible = 150; // Distância para ativar o surgimento
+
+        if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add("active");
+        }
+    }
+}
+
+window.addEventListener("scroll", reveal);
+
+// Para verificar as seções que já estão na tela ao carregar a página
+reveal();
+</script>
+
+<section class="tech-bar">
+    <div class="tech-item">
+        <i class="devicon-python-plain"></i>
+        <span>Python</span>
+    </div>
+    <div class="tech-item">
+        <i class="devicon-sqlite-plain"></i>
+        <span>SQLite</span>
+    </div>
+    <div class="tech-item">
+        <i class="devicon-selenium-original"></i>
+        <span>Selenium</span>
+    </div>
+    <div class="tech-item">
+        <i class="devicon-javascript-plain"></i>
+        <span>JavaScript</span>
+    </div>
+</section>
+
+
+
+
+<script>
+// Função para máscara visual
+function mascaraCPF(i) {
+   var v = i.value;
+   if(isNaN(v[v.length-1])){
+      i.value = v.substring(0, v.length-1);
+      return;
+   }
+   i.setAttribute("maxlength", "14");
+   if (v.length == 3 || v.length == 7) i.value += ".";
+   if (v.length == 11) i.value += "-";
+}
+
+// Lógica de Validação Matemática
+function validarCPF() {
+    const cpfRaw = document.getElementById('cpfInput').value.replace(/\D/g, '');
+    const card = document.getElementById('v-card');
+    const msg = document.getElementById('validator-msg');
+
+    if (cpfRaw.length < 11) {
+        card.className = "validator-card";
+        msg.innerText = "Aguardando digitação...";
+        msg.style.color = "#64748b";
+        return;
+    }
+
+    if (isCpfValid(cpfRaw)) {
+        card.className = "validator-card valid";
+        msg.innerText = "✅ CPF VÁLIDO PARA REGISTRO";
+        msg.style.color = "#22c55e";
+    } else {
+        card.className = "validator-card invalid";
+        msg.innerText = "❌ CPF INVÁLIDO OU FALSO";
+        msg.style.color = "#ef4444";
+    }
+}
+
+function isCpfValid(cpf) {
+    if (cpf.length !== 11 || !!cpf.match(/(\d)\1{10}/)) return false;
+    let s = 0;
+    for (let i = 1; i <= 9; i++) s += parseInt(cpf[i-1]) * (11 - i);
+    let r = (s * 10) % 11;
+    if (r == 10 || r == 11) r = 0;
+    if (r != parseInt(cpf[9])) return false;
+    s = 0;
+    for (let i = 1; i <= 10; i++) s += parseInt(cpf[i-1]) * (12 - i);
+    r = (s * 10) % 11;
+    if (r == 10 || r == 11) r = 0;
+    return r == parseInt(cpf[10]);
+}
+</script>
+
+</body>
+</html>

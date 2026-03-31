@@ -1,0 +1,120 @@
+/* --- 1. CONFIGURAÇÕES GERAIS E FONTES --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap');
+
+:root {
+    --bg-dark: #0f172a;       /* Azul Petróleo Super Escuro (Fundo de antes) */
+    --primary-gradient: linear-gradient(135deg, #aeacb6 0%, #6d28d9 100%); /* Gradiente de roxo de antes */
+    --text-main: #f3f4f6;
+    --text-muted: #94a3b8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* --- 2. HERO SECTION CENTRALIZADA --- */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    text-align: center;
+    padding: 0 10%;
+    
+    /* Fundo com textura sutil de grid */
+    background-image: 
+        linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 1)),
+        url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48ZyBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiM2ZDI4ZDkiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTAgMGg0MHY0MEgwVjB6bTIwIDIwaDIwdjIwSDIWMjB6TTAgMjBoMjB2MjBIMFYyMHoyMCAwaDIwdjIwSDIwVjB6Ii8+PC9nPjwvZz48L3N2Zz4=');
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px; /* Garante o espaçamento perfeito e dinâmico entre os elementos */
+    max-width: 900px;
+}
+
+/* --- 3. TIPOGRAFIA COM GRADIENTE (Texto de antes) --- */
+.hero-content h1 {
+    font-size: clamp(2.8rem, 9vw, 5rem); /* Fonte que se ajusta ao tamanho da tela */
+    font-weight: 900;
+    letter-spacing: -2px;
+    line-height: 1.1;
+    
+    /* GRADIENTE NO TEXTO (Nível Specialist) */
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-content h1 span {
+    display: block; /* Força a quebra de linha estilosa */
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    color: var(--text-muted);
+    font-weight: 300;
+    max-width: 650px;
+}
+
+/* --- 4. O BOTÃO COM GRADIENTE E GLOW (De antes) --- */
+.cta-button {
+    padding: 18px 45px;
+    background: var(--primary-gradient); /* Usando o gradiente de antes */
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    
+    /* Transições suaves */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: none;
+
+    /* Sombra base suave */
+    box-shadow: 0 10px 20px rgba(109, 40, 217, 0.3);
+}
+
+.cta-button:hover {
+    transform: translateY(-5px) scale(1.02);
+    
+    /* Efeito de brilho neon (Glow) de antes */
+    box-shadow: 0 0 25px rgba(222, 221, 226, 0.5), 
+                0 0 50px rgba(167, 139, 250, 0.3);
+}
+
+/* Animação de Surgimento */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Paleta de Cores Alternadas (Ajuste estas classes nas suas sections) */
+.bg-dark-tech { background-color: #0f172a; color: white; }
+.bg-light-tech { background-color: #f8fafc; color: #0f172a; }
+.bg-purple-tech { background-color: #c6aedd; color: #0f172a; }
+.bg-white-tech { background-color: #ffffff; color: #0f172a; }
+
+/* Ajuste fino nos títulos para cada cor de fundo */
+.bg-dark-tech .section-title { color: white; }
+.bg-light-tech .section-title { color: #0f172a; }
+.bg-purple-tech .section-title { color: #222121; }
