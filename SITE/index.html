@@ -212,6 +212,49 @@
     }
 }
 
+/* AJUSTES PARA CELULAR (COLE NO FINAL DO SEU STYLE) */
+@media (max-width: 768px) {
+    /* 1. Ajusta a Barra de Navegação */
+    nav {
+        flex-direction: column; /* Coloca o logo em cima e os links embaixo */
+        height: auto !important;
+        padding: 15px 10px !important;
+        gap: 10px;
+    }
+
+    .nav-links {
+        display: flex;
+        justify-content: center;
+        gap: 15px; /* Espaço entre Home, Projetos, etc */
+        font-size: 14px;
+    }
+
+    /* 2. Ajusta o Título Gigante que está vazando */
+    .hero h1 {
+        font-size: 2.5rem !important; /* Diminui o texto "VOCÊ NUNCA..." */
+        line-height: 1.1;
+        width: 100%;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+
+    .hero p {
+        font-size: 1.2rem !important;
+    }
+
+    /* 3. Ajusta o botão para não ficar muito largo */
+    .btn-explorar {
+        width: 80%;
+        max-width: 300px;
+    }
+
+    /* 4. Ajusta a seção roxa debaixo */
+    .projetos-section h2 {
+        font-size: 1.8rem !important;
+        padding: 20px;
+    }
+}
+
         .stat-item h3 { font-size: 4rem; font-weight: 900; line-height: 1; }
         .red { color: #ef4444; }
         .purple { color: var(--accent); }
