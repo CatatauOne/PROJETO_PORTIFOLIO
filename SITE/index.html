@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PROJETOSCATATECH | Portfólio</title>
@@ -181,9 +182,41 @@
             justify-content: center;
         }
 
+        @media (max-width: 768px) {
+    /* Faz os cards ocuparem a largura toda */
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    /* Diminui o tamanho das fontes para não quebrar linha */
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    /* Se você tiver colunas (flexbox), coloca uma embaixo da outra */
+    .features, .cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 100% !important;
+        margin-bottom: 20px;
+    }
+
+    /* Ajusta o gráfico para não vazar da tela */
+    canvas {
+        width: 100% !important;
+        height: auto !important;
+    }
+}
+
         .stat-item h3 { font-size: 4rem; font-weight: 900; line-height: 1; }
         .red { color: #ef4444; }
         .purple { color: var(--accent); }
+
+
     </style>
 </head>
 <body>
